@@ -17,10 +17,10 @@ struct CategoryCard<T>: View {
         Text(title)
             .frame(maxWidth: .infinity)
             .frame(height: 100)
-            .foregroundStyle(isSelected ? .appText : .appTextSecondary.opacity(0.7))
+            .foregroundStyle(isSelected ? .appBackground : .appTextSecondary.opacity(0.7))
             .font(.title2.bold())
-            .background(isSelected ? .appPrimaryTapped : .appBackground)
-            .addBorder(isSelected ? .appPrimaryTapped : .appTextSecondary.opacity(0.7), width: 1, cornerRadius: 25)
+            .background(isSelected ? .appPrimary : .appBackground)
+            .addBorder(isSelected ? .appPrimary : .appTextSecondary.opacity(0.7), width: 1, cornerRadius: 25)
             .clipShape(RoundedRectangle(cornerRadius: 25))
             .onTapGesture {
                 onPressed(value)

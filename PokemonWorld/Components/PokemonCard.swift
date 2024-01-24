@@ -11,14 +11,23 @@ struct PokemonCard: View {
     let pokemon: Pokemon
     
     var body: some View {
-        HStack {
-            Image("unknownPokemon")
-                .resizable()
-                .scaledToFit()
+        HStack(spacing: 0) {
+            ZStack(alignment: .trailing) {
+                Image("unknownPokemon")
+                    .resizable()
+                    .scaledToFit()
+                
+                Color.white
+                    .blur(radius: 3)
+                    .frame(width: 10)
+                    .offset(x: 5)
+            }
+            .frame(width: 100)
             
             Text(pokemon.name?.uppercased() ?? "Unknown")
                 .font(.title3)
                 .fontWeight(.bold)
+                .padding(.horizontal, 16)
             
             Spacer()
         }
