@@ -7,10 +7,8 @@
 
 import SwiftUI
 
-struct SearchTab: View {
+struct PokedexTab: View {
     @EnvironmentObject var searchPokemonViewModel: SearchPokemonViewModel
-    
-    @State var searchText: String = ""
     
     var body: some View {
         ScrollView {
@@ -34,7 +32,6 @@ struct SearchTab: View {
             }
         }
         .navigationTitle("Pokedex")
-        .searchable(text: $searchText)
         .onAppear {
             if searchPokemonViewModel.listOfpokemons.isEmpty {
                 searchPokemonViewModel.getInitData()
@@ -44,5 +41,5 @@ struct SearchTab: View {
 }
 
 #Preview {
-    SearchTab()
+    PokedexTab()
 }

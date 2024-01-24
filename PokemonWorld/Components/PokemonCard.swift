@@ -27,6 +27,7 @@ struct PokemonCard: View {
             Text(pokemon.name?.uppercased() ?? "Unknown")
                 .font(.title3)
                 .fontWeight(.bold)
+                .foregroundStyle(.appText)
                 .padding(.horizontal, 16)
             
             Spacer()

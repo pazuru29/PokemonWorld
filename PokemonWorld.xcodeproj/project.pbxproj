@@ -15,7 +15,7 @@
 		A873AD462B6080A500B695B3 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = A873AD452B6080A500B695B3 /* Tab.swift */; };
 		A873AD482B60830C00B695B3 /* AnimatedTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = A873AD472B60830C00B695B3 /* AnimatedTab.swift */; };
 		A873AD4B2B60841100B695B3 /* Theme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A873AD4A2B60841100B695B3 /* Theme.xcassets */; };
-		A8C1CFA12B61115F001EF17E /* SearchTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1CFA02B61115F001EF17E /* SearchTab.swift */; };
+		A8C1CFA12B61115F001EF17E /* PokedexTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1CFA02B61115F001EF17E /* PokedexTab.swift */; };
 		A8C1CFA32B611179001EF17E /* ComparisonTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1CFA22B611179001EF17E /* ComparisonTab.swift */; };
 		A8C1CFA52B611196001EF17E /* CollectionTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1CFA42B611196001EF17E /* CollectionTab.swift */; };
 		A8C1CFA72B6111A4001EF17E /* SettingsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1CFA62B6111A4001EF17E /* SettingsTab.swift */; };
@@ -49,7 +49,7 @@
 		A873AD452B6080A500B695B3 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		A873AD472B60830C00B695B3 /* AnimatedTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTab.swift; sourceTree = "<group>"; };
 		A873AD4A2B60841100B695B3 /* Theme.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Theme.xcassets; sourceTree = "<group>"; };
-		A8C1CFA02B61115F001EF17E /* SearchTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTab.swift; sourceTree = "<group>"; };
+		A8C1CFA02B61115F001EF17E /* PokedexTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexTab.swift; sourceTree = "<group>"; };
 		A8C1CFA22B611179001EF17E /* ComparisonTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparisonTab.swift; sourceTree = "<group>"; };
 		A8C1CFA42B611196001EF17E /* CollectionTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTab.swift; sourceTree = "<group>"; };
 		A8C1CFA62B6111A4001EF17E /* SettingsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTab.swift; sourceTree = "<group>"; };
@@ -203,7 +203,7 @@
 		A8C1CF9F2B611148001EF17E /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
-				A8C1CFA02B61115F001EF17E /* SearchTab.swift */,
+				A8C1CFA02B61115F001EF17E /* PokedexTab.swift */,
 				A8C1CFA22B611179001EF17E /* ComparisonTab.swift */,
 				A8C1CFA42B611196001EF17E /* CollectionTab.swift */,
 				A8C1CFA62B6111A4001EF17E /* SettingsTab.swift */,
@@ -347,7 +347,7 @@
 				A8C1CFB62B611EF0001EF17E /* IconButtonStyle.swift in Sources */,
 				A8C1CFA72B6111A4001EF17E /* SettingsTab.swift in Sources */,
 				A8C1CFB82B61206C001EF17E /* Gender.swift in Sources */,
-				A8C1CFA12B61115F001EF17E /* SearchTab.swift in Sources */,
+				A8C1CFA12B61115F001EF17E /* PokedexTab.swift in Sources */,
 				A8C1CFCD2B614507001EF17E /* OnboardingName.swift in Sources */,
 				A8C1CFCF2B615289001EF17E /* SearchPokemonViewModel.swift in Sources */,
 				A8C1CFAC2B611678001EF17E /* OnboardingCharacterGender.swift in Sources */,

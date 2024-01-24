@@ -8,14 +8,14 @@
 import SwiftUI
 
 enum Tab: String, CaseIterable {
-    case search = "magnifyingglass"
+    case pokedex = "magnifyingglass"
     case comparison = "arrowshape.left.arrowshape.right"
     case collection = "shippingbox"
     case settings = "gear.circle"
     
     var activeIcon: String {
         switch self {
-        case .search:
+        case .pokedex:
             "sparkle.magnifyingglass"
         case .comparison:
             "arrowshape.left.arrowshape.right.fill"
@@ -28,8 +28,8 @@ enum Tab: String, CaseIterable {
     
     var title: String {
         switch self {
-        case .search:
-            "Search"
+        case .pokedex:
+            "Pokedex"
         case .comparison:
             "Comparison"
         case .collection:

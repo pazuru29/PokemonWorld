@@ -12,7 +12,7 @@ struct MainView: View, KeyboardReadable {
     
     @State private var isKeyboardVisible = false
     
-    @State private var activeTab: Tab = .search
+    @State private var activeTab: Tab = .pokedex
     
     @State private var allTabs: [AnimatedTab] = Tab.allCases.compactMap { tab -> AnimatedTab? in
         return .init(tab: tab)
@@ -21,12 +21,12 @@ struct MainView: View, KeyboardReadable {
     var body: some View {
         VStack(spacing: 0) {
             TabView(selection: $activeTab) {
-                // MARK: Search
+                // MARK: Pokedex
                 NavigationStack {
-                    SearchTab()
+                    PokedexTab()
                 }
                 .environmentObject(searchPokemonViewModel)
-                .setUpTab(.search)
+                .setUpTab(.pokedex)
                 
                 // MARK: Comparison
                 NavigationStack {
