@@ -9,9 +9,19 @@ import SwiftUI
 
 @main
 struct PokemonWorldApp: App {
+    @AppConfiguration(\.isFirstTime) var isFirstTime
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if isFirstTime {
+                NavigationStack{
+                    OnboardingCharacterGender()
+                }
+                .preferredColorScheme(.light)
+            } else {
+                MainView()
+                    .preferredColorScheme(.light)
+            }
         }
     }
 }

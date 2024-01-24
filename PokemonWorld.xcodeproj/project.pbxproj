@@ -8,17 +8,47 @@
 
 /* Begin PBXBuildFile section */
 		A873AD2D2B60726300B695B3 /* PokemonWorldApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A873AD2C2B60726300B695B3 /* PokemonWorldApp.swift */; };
-		A873AD2F2B60726300B695B3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A873AD2E2B60726300B695B3 /* ContentView.swift */; };
 		A873AD312B60726500B695B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A873AD302B60726500B695B3 /* Assets.xcassets */; };
 		A873AD342B60726500B695B3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A873AD332B60726500B695B3 /* Preview Assets.xcassets */; };
+		A873AD422B6078F500B695B3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A873AD412B6078F500B695B3 /* MainView.swift */; };
+		A873AD442B60793C00B695B3 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A873AD432B60793C00B695B3 /* Launch Screen.storyboard */; };
+		A873AD462B6080A500B695B3 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = A873AD452B6080A500B695B3 /* Tab.swift */; };
+		A873AD482B60830C00B695B3 /* AnimatedTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = A873AD472B60830C00B695B3 /* AnimatedTab.swift */; };
+		A873AD4B2B60841100B695B3 /* Theme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A873AD4A2B60841100B695B3 /* Theme.xcassets */; };
+		A8C1CFA12B61115F001EF17E /* SearchTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1CFA02B61115F001EF17E /* SearchTab.swift */; };
+		A8C1CFA32B611179001EF17E /* ComparisonTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1CFA22B611179001EF17E /* ComparisonTab.swift */; };
+		A8C1CFA52B611196001EF17E /* CollectionTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1CFA42B611196001EF17E /* CollectionTab.swift */; };
+		A8C1CFA72B6111A4001EF17E /* SettingsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1CFA62B6111A4001EF17E /* SettingsTab.swift */; };
+		A8C1CFA92B61149A001EF17E /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1CFA82B61149A001EF17E /* AppConfiguration.swift */; };
+		A8C1CFAC2B611678001EF17E /* OnboardingCharacterGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1CFAB2B611678001EF17E /* OnboardingCharacterGender.swift */; };
+		A8C1CFAE2B6117CC001EF17E /* CategoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1CFAD2B6117CC001EF17E /* CategoryCard.swift */; };
+		A8C1CFB12B611BAA001EF17E /* Extension+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1CFB02B611BAA001EF17E /* Extension+View.swift */; };
+		A8C1CFB42B611DF3001EF17E /* MainButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1CFB32B611DF3001EF17E /* MainButtonStyle.swift */; };
+		A8C1CFB62B611EF0001EF17E /* IconButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1CFB52B611EF0001EF17E /* IconButtonStyle.swift */; };
+		A8C1CFB82B61206C001EF17E /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1CFB72B61206C001EF17E /* Gender.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A873AD292B60726300B695B3 /* PokemonWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A873AD2C2B60726300B695B3 /* PokemonWorldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonWorldApp.swift; sourceTree = "<group>"; };
-		A873AD2E2B60726300B695B3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A873AD302B60726500B695B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A873AD332B60726500B695B3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A873AD412B6078F500B695B3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		A873AD432B60793C00B695B3 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		A873AD452B6080A500B695B3 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		A873AD472B60830C00B695B3 /* AnimatedTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTab.swift; sourceTree = "<group>"; };
+		A873AD4A2B60841100B695B3 /* Theme.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Theme.xcassets; sourceTree = "<group>"; };
+		A8C1CFA02B61115F001EF17E /* SearchTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTab.swift; sourceTree = "<group>"; };
+		A8C1CFA22B611179001EF17E /* ComparisonTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparisonTab.swift; sourceTree = "<group>"; };
+		A8C1CFA42B611196001EF17E /* CollectionTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTab.swift; sourceTree = "<group>"; };
+		A8C1CFA62B6111A4001EF17E /* SettingsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTab.swift; sourceTree = "<group>"; };
+		A8C1CFA82B61149A001EF17E /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		A8C1CFAB2B611678001EF17E /* OnboardingCharacterGender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCharacterGender.swift; sourceTree = "<group>"; };
+		A8C1CFAD2B6117CC001EF17E /* CategoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCard.swift; sourceTree = "<group>"; };
+		A8C1CFB02B611BAA001EF17E /* Extension+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+View.swift"; sourceTree = "<group>"; };
+		A8C1CFB32B611DF3001EF17E /* MainButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonStyle.swift; sourceTree = "<group>"; };
+		A8C1CFB52B611EF0001EF17E /* IconButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonStyle.swift; sourceTree = "<group>"; };
+		A8C1CFB72B61206C001EF17E /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +82,14 @@
 			isa = PBXGroup;
 			children = (
 				A873AD2C2B60726300B695B3 /* PokemonWorldApp.swift */,
-				A873AD2E2B60726300B695B3 /* ContentView.swift */,
-				A873AD302B60726500B695B3 /* Assets.xcassets */,
+				A873AD3B2B60779200B695B3 /* ViewModels */,
+				A873AD3D2B6077AF00B695B3 /* Views */,
+				A873AD3E2B6077B800B695B3 /* Components */,
+				A873AD3A2B60778200B695B3 /* Network */,
+				A873AD3C2B6077A500B695B3 /* Models */,
+				A873AD3F2B6077C300B695B3 /* Utils */,
+				A8C1CFAF2B611B7D001EF17E /* Extension */,
+				A873AD402B6078CC00B695B3 /* Resourses */,
 				A873AD322B60726500B695B3 /* Preview Content */,
 			);
 			path = PokemonWorld;
@@ -65,6 +101,111 @@
 				A873AD332B60726500B695B3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A873AD3A2B60778200B695B3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A873AD3B2B60779200B695B3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A873AD3C2B6077A500B695B3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A873AD492B60831200B695B3 /* Tab */,
+				A8C1CFB72B61206C001EF17E /* Gender.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A873AD3D2B6077AF00B695B3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A8C1CFAA2B611643001EF17E /* Onboarding */,
+				A8C1CF9F2B611148001EF17E /* Tabs */,
+				A873AD432B60793C00B695B3 /* Launch Screen.storyboard */,
+				A873AD412B6078F500B695B3 /* MainView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A873AD3E2B6077B800B695B3 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A8C1CFAD2B6117CC001EF17E /* CategoryCard.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A873AD3F2B6077C300B695B3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A8C1CFB22B611DE0001EF17E /* ButtonStyles */,
+				A8C1CFA82B61149A001EF17E /* AppConfiguration.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		A873AD402B6078CC00B695B3 /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				A873AD302B60726500B695B3 /* Assets.xcassets */,
+				A873AD4A2B60841100B695B3 /* Theme.xcassets */,
+			);
+			path = Resourses;
+			sourceTree = "<group>";
+		};
+		A873AD492B60831200B695B3 /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				A873AD452B6080A500B695B3 /* Tab.swift */,
+				A873AD472B60830C00B695B3 /* AnimatedTab.swift */,
+			);
+			path = Tab;
+			sourceTree = "<group>";
+		};
+		A8C1CF9F2B611148001EF17E /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				A8C1CFA02B61115F001EF17E /* SearchTab.swift */,
+				A8C1CFA22B611179001EF17E /* ComparisonTab.swift */,
+				A8C1CFA42B611196001EF17E /* CollectionTab.swift */,
+				A8C1CFA62B6111A4001EF17E /* SettingsTab.swift */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		A8C1CFAA2B611643001EF17E /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				A8C1CFAB2B611678001EF17E /* OnboardingCharacterGender.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		A8C1CFAF2B611B7D001EF17E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A8C1CFB02B611BAA001EF17E /* Extension+View.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		A8C1CFB22B611DE0001EF17E /* ButtonStyles */ = {
+			isa = PBXGroup;
+			children = (
+				A8C1CFB32B611DF3001EF17E /* MainButtonStyle.swift */,
+				A8C1CFB52B611EF0001EF17E /* IconButtonStyle.swift */,
+			);
+			path = ButtonStyles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +266,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A873AD442B60793C00B695B3 /* Launch Screen.storyboard in Resources */,
+				A873AD4B2B60841100B695B3 /* Theme.xcassets in Resources */,
 				A873AD342B60726500B695B3 /* Preview Assets.xcassets in Resources */,
 				A873AD312B60726500B695B3 /* Assets.xcassets in Resources */,
 			);
@@ -137,7 +280,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A873AD2F2B60726300B695B3 /* ContentView.swift in Sources */,
+				A8C1CFA92B61149A001EF17E /* AppConfiguration.swift in Sources */,
+				A873AD462B6080A500B695B3 /* Tab.swift in Sources */,
+				A8C1CFB42B611DF3001EF17E /* MainButtonStyle.swift in Sources */,
+				A873AD422B6078F500B695B3 /* MainView.swift in Sources */,
+				A8C1CFB62B611EF0001EF17E /* IconButtonStyle.swift in Sources */,
+				A8C1CFA72B6111A4001EF17E /* SettingsTab.swift in Sources */,
+				A8C1CFB82B61206C001EF17E /* Gender.swift in Sources */,
+				A8C1CFA12B61115F001EF17E /* SearchTab.swift in Sources */,
+				A8C1CFAC2B611678001EF17E /* OnboardingCharacterGender.swift in Sources */,
+				A873AD482B60830C00B695B3 /* AnimatedTab.swift in Sources */,
+				A8C1CFA32B611179001EF17E /* ComparisonTab.swift in Sources */,
+				A8C1CFAE2B6117CC001EF17E /* CategoryCard.swift in Sources */,
+				A8C1CFA52B611196001EF17E /* CollectionTab.swift in Sources */,
+				A8C1CFB12B611BAA001EF17E /* Extension+View.swift in Sources */,
 				A873AD2D2B60726300B695B3 /* PokemonWorldApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,8 +434,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,8 +464,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
