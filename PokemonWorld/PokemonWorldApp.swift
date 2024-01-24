@@ -20,7 +20,7 @@ struct PokemonWorldApp: App {
                 .preferredColorScheme(.light)
             } else {
                 MainView()
-                    .preferredColorScheme(.light)
+                .preferredColorScheme(.light)
             }
         }
     }

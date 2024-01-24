@@ -10,6 +10,7 @@ import SwiftUI
 struct CollectionTab: View {
     var body: some View {
         Text("Collection")
+            .navigationTitle("Collection")
     }
 }
 

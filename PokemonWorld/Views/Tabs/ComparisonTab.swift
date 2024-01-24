@@ -10,6 +10,7 @@ import SwiftUI
 struct ComparisonTab: View {
     var body: some View {
         Text("Comparison")
+            .navigationTitle("Comparison")
     }
 }
 

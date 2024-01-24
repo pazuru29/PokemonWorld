@@ -24,7 +24,7 @@ struct IconButtonStyle: ButtonStyle {
         guard isEnabled else {
             return .appTextSecondary
         }
-        return isPressed ? .appPrimary : .appPrimaryTapped
+        return isPressed ? .appPrimaryTapped : .appPrimary
     }
 }
 

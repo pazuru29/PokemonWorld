@@ -7,7 +7,10 @@
 
 import SwiftUI
 
-struct MainView: View {
+struct MainView: View, KeyboardReadable {
+    @StateObject var searchPokemonViewModel: SearchPokemonViewModel = SearchPokemonViewModel()
+    
+    @State private var isKeyboardVisible = false
     
     @State private var activeTab: Tab = .search
     
@@ -22,6 +25,7 @@ struct MainView: View {
                 NavigationStack {
                     SearchTab()
                 }
+                .environmentObject(searchPokemonViewModel)
                 .setUpTab(.search)
                 
                 // MARK: Comparison
@@ -42,8 +46,14 @@ struct MainView: View {
                 }
                 .setUpTab(.settings)
             }
-            CustomTabBar()
+            if !isKeyboardVisible {
+                CustomTabBar()
+            }
         }
+        .onReceive(keyboardPublisher, perform: { newIsKeyboardVisible in
+            print("Is keyboard visible? ", newIsKeyboardVisible)
+            isKeyboardVisible = newIsKeyboardVisible
+        })
     }
     
     @ViewBuilder

@@ -31,9 +31,8 @@ struct OnboardingCharacterGender: View {
             
             Spacer()
             
-            Button("Save") {
-                isFirstTime = false
-                isMail = gender == .mail
+            NavigationLink("Next") {
+                OnboardingName(gender: gender ?? .mail)
             }
             .buttonStyle(MainButtonStyle())
             .padding(.horizontal, 20)
