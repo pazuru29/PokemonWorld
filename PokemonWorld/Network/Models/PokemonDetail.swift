@@ -131,8 +131,7 @@ struct Species: Codable {
 }
 
 //MARK: Stats
-
-struct Stats: Codable {
+struct Stats: Codable, Hashable {
     let base_stat: Int?
     let effort: Int?
     let stat: Stat?
@@ -151,7 +150,7 @@ struct Stats: Codable {
     }
 }
 
-struct Stat: Codable {
+struct Stat: Codable, Hashable {
     let name: String?
     let url: String?
     

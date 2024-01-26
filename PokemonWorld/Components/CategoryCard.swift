@@ -22,6 +22,7 @@ struct CategoryCard<T>: View {
             .background(isSelected ? .appPrimary : .appBackground)
             .addBorder(isSelected ? .appPrimary : .appTextSecondary.opacity(0.7), width: 1, cornerRadius: 25)
             .clipShape(RoundedRectangle(cornerRadius: 25))
+            .shadow(color: isSelected ? .clear : .gray, radius: 4, x: 0, y: 4)
             .onTapGesture {
                 onPressed(value)
             }

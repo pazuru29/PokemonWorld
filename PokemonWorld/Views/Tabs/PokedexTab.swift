@@ -8,33 +8,35 @@
 import SwiftUI
 
 struct PokedexTab: View {
-    @EnvironmentObject var searchPokemonViewModel: SearchPokemonViewModel
+    @EnvironmentObject var pokedexViewModel: PokedexViewModel
     
     var body: some View {
         ScrollView {
             LazyVStack {
-                ForEach(searchPokemonViewModel.listOfpokemons, id: \.self) { pokemon in
-                    NavigationLink(destination: PokemonDetailView(pokemon: pokemon).environmentObject(searchPokemonViewModel), label: {
-                        PokemonCard(pokemon: pokemon)
+                ForEach(pokedexViewModel.listOfpokemons, id: \.self) { pokemon in
+                    NavigationLink(destination: PokemonDetailView(pokemon: pokemon), label: {
+                        PokemonCard(pokemon: pokemon, image: pokedexViewModel.mapOfImages[pokemon.url ?? ""])
                     })
                         .padding(.horizontal, 20)
                 }
                 .padding(.bottom, 16)
                 
-                if searchPokemonViewModel.hasMoreRows {
+                if pokedexViewModel.hasMoreRows {
                         ProgressView()
                             .padding(.bottom, 16)
                             .onAppear {
                                 print("START MORE")
-                                searchPokemonViewModel.getMorePokemons()
+                                pokedexViewModel.getMorePokemons()
                             }
                     }
             }
         }
         .navigationTitle("Pokedex")
         .onAppear {
-            if searchPokemonViewModel.listOfpokemons.isEmpty {
-                searchPokemonViewModel.getInitData()
+            if pokedexViewModel.listOfpokemons.isEmpty {
+                pokedexViewModel.getInitData()
+            } else {
+                pokedexViewModel.getImagesFromDB(listOfPokemons: pokedexViewModel.listOfpokemons)
             }
         }
     }

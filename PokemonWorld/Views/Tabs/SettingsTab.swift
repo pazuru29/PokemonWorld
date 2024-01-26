@@ -32,6 +32,7 @@ struct SettingsTab: View {
                 .scaledToFit()
                 .frame(width: 70, height: 70)
                 .clipShape(RoundedRectangle(cornerRadius: 16))
+                .shadow(radius: 2)
             
             Text(name)
                 .font(.title3)

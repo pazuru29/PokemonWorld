@@ -5,16 +5,17 @@
 //  Created by Yaroslav Chlek on 24.01.2024.
 //
 
-import Foundation
+import SwiftUI
 
-class SearchPokemonViewModel: ObservableObject {
+class PokedexViewModel: ObservableObject {
     private let pokemonRepository: PokemonRepository = PokemonRepository()
     
     @MainActor @Published var listOfpokemons: [Pokemon] = []
     
-    @Published var hasMoreRows: Bool = false
+    //MARK: map of saved images
+    @Published var mapOfImages: [String:UIImage] = [:]
     
-    @Published var currentPokemonDetail: PokemonDetail?
+    @Published var hasMoreRows: Bool = false
     
     private var nextStringUrl: String?
     
@@ -28,6 +29,9 @@ class SearchPokemonViewModel: ObservableObject {
                 nextStringUrl = pokemonResponse.next
                 //Set to list
                 await MainActor.run {
+                    //Get images
+                    getImagesFromDB(listOfPokemons: pokemonResponse.results)
+                    
                     listOfpokemons = pokemonResponse.results
                     hasMoreRows = nextStringUrl != nil
                 }
@@ -37,7 +41,7 @@ class SearchPokemonViewModel: ObservableObject {
         }
     }
     
-    //MARK: get more pokemons
+    //MARK: Get more pokemons
     func getMorePokemons() {
         guard let url = nextStringUrl else {
             return
@@ -50,6 +54,9 @@ class SearchPokemonViewModel: ObservableObject {
                 nextStringUrl = pokemonResponse.next
                 //Add to list
                 await MainActor.run {
+                    //Get images
+                    getImagesFromDB(listOfPokemons: pokemonResponse.results)
+                    
                     listOfpokemons.append(contentsOf: pokemonResponse.results)
                     hasMoreRows = nextStringUrl != nil
                 }
@@ -59,22 +66,19 @@ class SearchPokemonViewModel: ObservableObject {
         }
     }
     
-    //MARK: find detail by pokemon
-    func getDetailByPokemon(stringUrl: String?) {
-        guard let url = stringUrl else {
-            return
-        }
+    func getImagesFromDB(listOfPokemons: [Pokemon]) {
+        //GET Saved pokemons
+        let listOfSavedPokemons = CoreDataManager.shared.getSavedPokemons()
         
-        Task {
-            do {
-                //Get response more pokemon
-                let pokemonDetail = try await pokemonRepository.getPokemonDetail(stringUrl: url)
-                //Set pokemon detail
-                await MainActor.run {
-                    currentPokemonDetail = pokemonDetail
-                }
-            } catch {
-                print("Fetching establishments failed with error \(error)")
+        for pokemon in listOfPokemons {
+            guard let url = pokemon.url else { continue }
+            
+            let savedPokemon = listOfSavedPokemons.first { value in
+                value.key == url
+            }
+            
+            if let savedPokemon = savedPokemon {
+                mapOfImages[url] = UIImage(data: savedPokemon.image ?? Data())
             }
         }
     }

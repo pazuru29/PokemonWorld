@@ -7,13 +7,9 @@
 
 import SwiftUI
 
-struct CollectionTab: View {
+struct BackpackTab: View {    
     var body: some View {
         Text("Collection")
             .navigationTitle("Collection")
     }
-}
-
-#Preview {
-    CollectionTab()
 }

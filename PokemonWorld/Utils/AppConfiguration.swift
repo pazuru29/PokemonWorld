@@ -8,9 +8,9 @@
 import SwiftUI
 
 public class Defaults: ObservableObject {
+    @AppStorage("name") public var name = "Username"
     @AppStorage("isFirstTime") public var isFirstTime = true
     @AppStorage("isMail") public var isMail = true
-    @AppStorage("name") public var name = "Username"
     
     public static let shared = Defaults()
 }

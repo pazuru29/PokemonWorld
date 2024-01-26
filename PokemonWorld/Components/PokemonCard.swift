@@ -9,13 +9,21 @@ import SwiftUI
 
 struct PokemonCard: View {
     let pokemon: Pokemon
+    let image: UIImage?
     
     var body: some View {
         HStack(spacing: 0) {
             ZStack(alignment: .trailing) {
-                Image("unknownPokemon")
-                    .resizable()
-                    .scaledToFit()
+                if image != nil {
+                    Image(uiImage: image!)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 90)
+                } else {
+                    Image("unknownPokemon")
+                        .resizable()
+                        .scaledToFit()
+                }
                 
                 Color.white
                     .blur(radius: 3)
@@ -36,8 +44,4 @@ struct PokemonCard: View {
         .frame(height: 100)
         .addBorder(.appPrimary, width: 2, cornerRadius: 25)
     }
-}
-
-#Preview {
-    PokemonCard(pokemon: Pokemon(name: "Name", url: ""))
 }

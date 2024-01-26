@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainView: View, KeyboardReadable {
-    @StateObject var searchPokemonViewModel: SearchPokemonViewModel = SearchPokemonViewModel()
+    @StateObject var pokedexViewModel: PokedexViewModel = PokedexViewModel()
     
     @State private var isKeyboardVisible = false
     
@@ -25,7 +25,7 @@ struct MainView: View, KeyboardReadable {
                 NavigationStack {
                     PokedexTab()
                 }
-                .environmentObject(searchPokemonViewModel)
+                .environmentObject(pokedexViewModel)
                 .setUpTab(.pokedex)
                 
                 // MARK: Comparison
@@ -36,9 +36,9 @@ struct MainView: View, KeyboardReadable {
                 
                 // MARK: Collection
                 NavigationStack {
-                    CollectionTab()
+                    BackpackTab()
                 }
-                .setUpTab(.collection)
+                .setUpTab(.backpack)
                 
                 // MARK: Settings
                 NavigationStack {
@@ -64,6 +64,9 @@ struct MainView: View, KeyboardReadable {
                 
                 VStack(spacing: 4) {
                     Image(systemName: activeTab == tab ? tab.activeIcon : tab.rawValue)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 24, height: 24)
                         .font(.title2)
                         .contentTransition(.symbolEffect(.replace.downUp.byLayer))
                     
