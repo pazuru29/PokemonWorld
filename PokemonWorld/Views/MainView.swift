@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainView: View, KeyboardReadable {
     @StateObject var pokedexViewModel: PokedexViewModel = PokedexViewModel()
+    @StateObject var backpackViewModel: BackpackViewModel = BackpackViewModel()
     
     @State private var isKeyboardVisible = false
     
@@ -38,6 +39,7 @@ struct MainView: View, KeyboardReadable {
                 NavigationStack {
                     BackpackTab()
                 }
+                .environmentObject(backpackViewModel)
                 .setUpTab(.backpack)
                 
                 // MARK: Settings

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PokemonDetail: Codable {
+struct PokemonDetail: Codable, Hashable {
     let id: Int?
     let name: String?
     let baseExperience: Int?
@@ -54,7 +54,7 @@ struct PokemonDetail: Codable {
 }
 
 //MARK: sprites
-struct Sprites: Codable {
+struct Sprites: Codable, Hashable {
     let frontDefault: String?
     let other: OtherSprites?
     
@@ -64,7 +64,7 @@ struct Sprites: Codable {
         }
 }
 
-struct OtherSprites: Codable {
+struct OtherSprites: Codable, Hashable {
     let dreamWorld: DreamWorld?
     let home: HomeSprites?
     
@@ -79,7 +79,7 @@ struct OtherSprites: Codable {
         }
 }
 
-struct HomeSprites: Codable {
+struct HomeSprites: Codable, Hashable {
     let frontDefault: String?
     
     init(frontDefault: String?) {
@@ -96,7 +96,7 @@ struct HomeSprites: Codable {
         }
 }
 
-struct DreamWorld: Codable {
+struct DreamWorld: Codable, Hashable {
     let frontDefault: String?
     
     init(frontDefault: String?) {
@@ -114,7 +114,7 @@ struct DreamWorld: Codable {
 }
 
 //MARK: Species
-struct Species: Codable {
+struct Species: Codable, Hashable {
     let name: String?
     let url: String?
     
