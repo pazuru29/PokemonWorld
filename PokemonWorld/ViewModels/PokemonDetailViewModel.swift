@@ -48,7 +48,11 @@ class PokemonDetailViewModel: ObservableObject {
                     
                     //Load image
                     loadImageFromURL(urlString: pokemonDetail.imageUrl ?? "") { imageFromData in
-                        self.image = imageFromData
+                        Task {
+                            await MainActor.run {
+                                self.image = imageFromData
+                            }
+                        }
                         
                         self.saveNewPokemon(key: url, jsonPokemon: pokemonDetail.toJSON(), image: self.image?.pngData())
                     }

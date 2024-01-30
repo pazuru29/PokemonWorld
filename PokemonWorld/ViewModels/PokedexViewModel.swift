@@ -20,7 +20,7 @@ class PokedexViewModel: ObservableObject {
     private var nextStringUrl: String?
     
     //MARK: Get first 20 pokemons
-    func getInitData() {
+    func getInitData() -> Bool {
         Task {
             do {
                 //Get response all pokemon
@@ -39,6 +39,8 @@ class PokedexViewModel: ObservableObject {
                 print("Fetching establishments failed with error \(error)")
             }
         }
+        
+        return true
     }
     
     //MARK: Get more pokemons

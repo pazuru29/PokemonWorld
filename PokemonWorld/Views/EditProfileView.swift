@@ -1,18 +1,16 @@
 //
-//  OnboardingName.swift
+//  EditProfileView.swift
 //  PokemonWorld
 //
-//  Created by Yaroslav Chlek on 24.01.2024.
+//  Created by Yaroslav Chlek on 30.01.2024.
 //
 
 import SwiftUI
 
-struct OnboardingName: View, KeyboardReadable {
-    @AppConfiguration(\.isFirstTime) var isFirstTime
+struct EditProfileView: View, KeyboardReadable {
+    @Environment(\.presentationMode) var presentationMode
     @AppConfiguration(\.isMail) var isMail
     @AppConfiguration(\.name) var name
-    
-    var gender: Gender
     
     @State private var isKeyboardVisible = false
     @State var currentUsername: String = ""
@@ -21,12 +19,7 @@ struct OnboardingName: View, KeyboardReadable {
         VStack {
             Spacer()
             
-            Text("What's your name, young catcher?")
-                .font(.title2)
-                .fontWeight(.bold)
-                .multilineTextAlignment(.center)
-            
-            Image(gender == .mail ? "mailAvatar" : "femailAvatar")
+            Image(isMail ? "mailAvatar" : "femailAvatar")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 130, height: 130)
@@ -47,13 +40,12 @@ struct OnboardingName: View, KeyboardReadable {
             //TODO: Need to fix
             Spacer()
             Spacer()
-
+            
             
             if !isKeyboardVisible {
                 Button("Save") {
-                    isFirstTime = false
-                    isMail = gender == .mail
                     name = currentUsername
+                    presentationMode.wrappedValue.dismiss()
                 }
                 .buttonStyle(MainButtonStyle())
                 .disabled(currentUsername.isEmpty)
@@ -67,9 +59,12 @@ struct OnboardingName: View, KeyboardReadable {
         })
         .padding(.horizontal, 20)
         .navigationTitle("Name of charecter")
+        .onAppear {
+            currentUsername = name
+        }
     }
 }
 
 #Preview {
-    OnboardingName(gender: .mail)
+    EditProfileView()
 }

@@ -9,7 +9,6 @@ import SwiftUI
 
 enum Tab: String, CaseIterable {
     case pokedex = "list.bullet.rectangle"
-    case comparison = "dice"
     case backpack = "backpack"
     case settings = "gear.circle"
     
@@ -17,8 +16,6 @@ enum Tab: String, CaseIterable {
         switch self {
         case .pokedex:
             "list.bullet.rectangle.fill"
-        case .comparison:
-            "dice.fill"
         case .backpack:
             "backpack.fill"
         case .settings:
@@ -30,8 +27,6 @@ enum Tab: String, CaseIterable {
         switch self {
         case .pokedex:
             "Pokedex"
-        case .comparison:
-            "Comparison"
         case .backpack:
             "Backpack"
         case .settings:

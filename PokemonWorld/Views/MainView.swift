@@ -29,12 +29,6 @@ struct MainView: View, KeyboardReadable {
                 .environmentObject(pokedexViewModel)
                 .setUpTab(.pokedex)
                 
-                // MARK: Comparison
-                NavigationStack {
-                    ComparisonTab()
-                }
-                .setUpTab(.comparison)
-                
                 // MARK: Collection
                 NavigationStack {
                     BackpackTab()

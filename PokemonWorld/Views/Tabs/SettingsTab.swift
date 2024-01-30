@@ -41,7 +41,7 @@ struct SettingsTab: View {
             Spacer()
             
             NavigationLink(destination: {
-//                EditProfileView(currentUsername: username)
+                EditProfileView()
             }, label: {
                 Image(systemName: "rectangle.and.pencil.and.ellipsis")
             })
