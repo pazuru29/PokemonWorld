@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-//TODO: Add search
 struct BackpackTab: View {
     @EnvironmentObject var backpackViewModel: BackpackViewModel
     
