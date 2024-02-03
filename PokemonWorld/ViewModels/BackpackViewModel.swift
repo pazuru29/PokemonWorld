@@ -10,8 +10,6 @@ import SwiftUI
 class BackpackViewModel: ObservableObject {
     @Published var listOfPokemons = [(String, PokemonDetail)]()
     
-    @Published var mapOfImages = [Int:UIImage]()
-    
     @Published var state: LoaderState = .loading
     
     func getInitData() {
@@ -24,7 +22,8 @@ class BackpackViewModel: ObservableObject {
         for pokemon in listOfSavedPokemons {
             if let pokemonDetail = PokemonDetail.fromJSON(json: pokemon.jsonPokemon ?? "") {
                 listOfPokemons.append((pokemon.key ?? "", pokemonDetail))
-                mapOfImages[pokemonDetail.id ?? -1] = UIImage(data: pokemon.image ?? Data())
+                let image = UIImage(data: pokemon.image ?? Data()) ?? UIImage(systemName: "unknownPokemon") ?? UIImage()
+                ImageCache.shared.set(image, forKey: pokemon.key ?? "")
             }
         }
         

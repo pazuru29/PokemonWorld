@@ -12,9 +12,6 @@ class PokedexViewModel: ObservableObject {
     
     @MainActor @Published var listOfpokemons: [Pokemon] = []
     
-    //MARK: map of saved images
-    @Published var mapOfImages: [String:UIImage] = [:]
-    
     @Published var hasMoreRows: Bool = false
     
     @Published var state: LoaderState = .loading
@@ -73,6 +70,7 @@ class PokedexViewModel: ObservableObject {
     }
     
     func getImagesFromDB(listOfPokemons: [Pokemon]) {
+        state = .loading
         //GET Saved pokemons
         let listOfSavedPokemons = CoreDataManager.shared.getSavedPokemons()
         
@@ -84,9 +82,10 @@ class PokedexViewModel: ObservableObject {
             }
             
             if let savedPokemon = savedPokemon {
-                //TODO: change to cache
-                mapOfImages[url] = UIImage(data: savedPokemon.image ?? Data())
+                let image = UIImage(data: savedPokemon.image ?? Data()) ?? UIImage(systemName: "unknownPokemon") ?? UIImage()
+                ImageCache.shared.set(image, forKey: url)
             }
         }
+        state = .loaded
     }
 }

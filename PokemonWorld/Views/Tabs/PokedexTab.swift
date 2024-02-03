@@ -19,7 +19,7 @@ struct PokedexTab: View {
             }
         }
         .navigationTitle("Pokedex")
-        .onAppear {
+        .task {
             if pokedexViewModel.listOfpokemons.isEmpty {
                 pokedexViewModel.getInitData()
             } else {
@@ -39,9 +39,9 @@ struct PokedexTab: View {
     func listOfPokemons() -> some View {
         ScrollView {
             LazyVStack {
-                ForEach(pokedexViewModel.listOfpokemons, id: \.self) { pokemon in
+                ForEach(pokedexViewModel.listOfpokemons, id: \.name) { pokemon in
                     NavigationLink(destination: PokemonDetailView(pokemon: pokemon), label: {
-                        PokemonCard(pokemon: pokemon, image: pokedexViewModel.mapOfImages[pokemon.url ?? ""])
+                        PokemonCard(pokemon: pokemon, image: ImageCache.shared.get(forKey: pokemon.url ?? ""))
                     })
                     .padding(.horizontal, 20)
                 }

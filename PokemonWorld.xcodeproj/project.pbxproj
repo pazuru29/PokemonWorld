@@ -43,6 +43,7 @@
 		A8C1CFD12B61666D001EF17E /* PokemonDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1CFD02B61666D001EF17E /* PokemonDetail.swift */; };
 		A8DAABDA2B6E3D1500756B4B /* LoaderState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DAABD92B6E3D1500756B4B /* LoaderState.swift */; };
 		A8E07D902B6EA70000D55CC5 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E07D8F2B6EA70000D55CC5 /* Functions.swift */; };
+		A8E07D922B6EAA4100D55CC5 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E07D912B6EAA4100D55CC5 /* ImageCache.swift */; };
 		A8FBB3D72B63B08600DAC487 /* Pokemondetail+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FBB3D62B63B08600DAC487 /* Pokemondetail+Extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +85,7 @@
 		A8C1CFD02B61666D001EF17E /* PokemonDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetail.swift; sourceTree = "<group>"; };
 		A8DAABD92B6E3D1500756B4B /* LoaderState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderState.swift; sourceTree = "<group>"; };
 		A8E07D8F2B6EA70000D55CC5 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		A8E07D912B6EAA4100D55CC5 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		A8FBB3D62B63B08600DAC487 /* Pokemondetail+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pokemondetail+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -198,6 +200,7 @@
 				A8C1CFA82B61149A001EF17E /* AppConfiguration.swift */,
 				A8DAABD92B6E3D1500756B4B /* LoaderState.swift */,
 				A8E07D8F2B6EA70000D55CC5 /* Functions.swift */,
+				A8E07D912B6EAA4100D55CC5 /* ImageCache.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 			files = (
 				A8DAABDA2B6E3D1500756B4B /* LoaderState.swift in Sources */,
 				A8C1CFC92B613DBC001EF17E /* KeyboardReadable+Extension.swift in Sources */,
+				A8E07D922B6EAA4100D55CC5 /* ImageCache.swift in Sources */,
 				A8C1CFA92B61149A001EF17E /* AppConfiguration.swift in Sources */,
 				A857AD202B6883EC0098B0D5 /* EditProfileView.swift in Sources */,
 				A8C1CFC12B613273001EF17E /* APIRequestDispatcher.swift in Sources */,

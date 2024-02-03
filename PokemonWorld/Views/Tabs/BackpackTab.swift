@@ -56,7 +56,7 @@ struct BackpackTab: View {
                             PokemonDetailView(pokemon: Pokemon(name: pokemon.name, url: url))
                         }, label: {
                             VStack {
-                                if let image = backpackViewModel.mapOfImages[pokemon.id ?? -1] {
+                                if let image = ImageCache.shared.get(forKey: url) {
                                     Image(uiImage: image)
                                         .resizable()
                                         .scaledToFit()
@@ -82,7 +82,7 @@ struct BackpackTab: View {
                 .padding(.horizontal, 20)
                 .padding(.bottom, 16)
             }
-            .onAppear {
+            .task {
                 if searchText.isEmpty {
                     filteredPokemonList = backpackViewModel.listOfPokemons
                 }
