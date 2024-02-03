@@ -20,11 +20,10 @@ struct OnboardingCharacterGender: View {
                 .scaledToFit()
             
             HStack {
-                CategoryCard<Gender>(value: .mail, title: Gender.mail.rawValue, isSelected: gender == .mail) { value in
-                    gender = value
-                }
-                CategoryCard<Gender>(value: .femail, title: Gender.femail.rawValue, isSelected: gender == .femail) {value in
-                    gender = value
+                ForEach(Gender.allCases, id: \.self) { item in
+                    CategoryCard<Gender>(value: item, title: item.rawValue, isSelected: gender == item) { value in
+                        gender = value
+                    }
                 }
             }
             .padding(.horizontal, 20)

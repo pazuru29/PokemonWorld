@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum Gender: String {
+enum Gender: String, CaseIterable {
     case mail = "Mail"
     case femail = "Femail"
 }

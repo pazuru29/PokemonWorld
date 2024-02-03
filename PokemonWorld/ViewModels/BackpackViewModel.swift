@@ -8,11 +8,11 @@
 import SwiftUI
 
 class BackpackViewModel: ObservableObject {
-    @Published var listOfPokemons: [(String, PokemonDetail)] = []
+    @Published var listOfPokemons = [(String, PokemonDetail)]()
     
-    @Published var mapOfImages: [Int:UIImage] = [:]
+    @Published var mapOfImages = [Int:UIImage]()
     
-    @Published var state: StateEnum = .loading
+    @Published var state: LoaderState = .loading
     
     func getInitData() {
         state = .loading

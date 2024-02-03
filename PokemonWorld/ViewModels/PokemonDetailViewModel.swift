@@ -16,7 +16,7 @@ class PokemonDetailViewModel: ObservableObject {
     @MainActor @Published var image: UIImage?
     
     //MARK: Find detail by pokemon
-    @MainActor func getDetailByPokemon(stringUrl: String?) {
+    func getDetailByPokemon(stringUrl: String?) {
         guard let url = stringUrl else {
             return
         }
@@ -33,14 +33,14 @@ class PokemonDetailViewModel: ObservableObject {
                 
                 if savedPokemon != nil {
                     //MARK: Take from database
-                    print("IMAGE FROM DB: \(String(describing: savedPokemon?.image))")
+                    dPrint("IMAGE FROM DB: \(String(describing: savedPokemon?.image))")
                     
                     await MainActor.run {
                         image = UIImage(data: savedPokemon?.image ?? Data())
                         currentPokemonDetail = PokemonDetail.fromJSON(json: savedPokemon?.jsonPokemon ?? "")
                     }
                     
-                    print("Take data from DB")
+                    dPrint("Take data from DB")
                 } else {
                     //MARK: Take from server
                     //Get response more pokemon
@@ -51,10 +51,9 @@ class PokemonDetailViewModel: ObservableObject {
                         Task {
                             await MainActor.run {
                                 self.image = imageFromData
+                                self.saveNewPokemon(key: url, jsonPokemon: pokemonDetail.toJSON(), image: self.image?.pngData())
                             }
                         }
-                        
-                        self.saveNewPokemon(key: url, jsonPokemon: pokemonDetail.toJSON(), image: self.image?.pngData())
                     }
                     
                     //Set pokemon detail
@@ -62,11 +61,11 @@ class PokemonDetailViewModel: ObservableObject {
                         currentPokemonDetail = pokemonDetail
                     }
                     
-                    print("Take data from server")
+                    dPrint("Take data from server")
                 }
                 
             } catch {
-                print("Fetching establishments failed with error \(error)")
+                dPrint("Fetching establishments failed with error \(error)")
             }
         }
         
@@ -82,6 +81,7 @@ class PokemonDetailViewModel: ObservableObject {
         CoreDataManager.shared.save()
     }
     
+    //TODO: Fix: Transfer to view
     //MARK: Load image from url
     func loadImageFromURL(urlString: String, completion: @escaping (UIImage?) -> Void) {
         guard let url = URL(string: urlString) else {

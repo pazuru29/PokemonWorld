@@ -39,7 +39,7 @@ enum APIRouter {
     }
     
     var parameters: [URLQueryItem] {
-        var queryList: [URLQueryItem] = []
+        let queryList: [URLQueryItem] = []
         //queryList.append(URLQueryItem(name: "apiKey", value: "\(APIRouter.apiKey)"))
         
         switch self {

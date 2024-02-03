@@ -51,7 +51,7 @@ struct PokedexTab: View {
                     ProgressView()
                         .padding(.bottom, 16)
                         .onAppear {
-                            print("START MORE")
+                            dPrint("START MORE")
                             pokedexViewModel.getMorePokemons()
                         }
                 }

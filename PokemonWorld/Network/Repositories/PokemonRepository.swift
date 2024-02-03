@@ -9,11 +9,15 @@ import Foundation
 
 protocol PokemonRepositoryProtocol {
     func getAllPokemons() async throws -> PokemonResponse
+    
+    func getMorePokemons(stringUrl: String) async throws -> PokemonResponse
+    
+    func getPokemonDetail(stringUrl: String) async throws -> PokemonDetail
 }
 
 class PokemonRepository: PokemonRepositoryProtocol {
     func getAllPokemons() async throws -> PokemonResponse {
-        print("Start ALL POKEMONS request")
+        dPrint("Start ALL POKEMONS request")
         
         let response = try await APIRequestDispatcher.request(apiRouter: .allPokemons, responseClass: PokemonResponse.self)
         
@@ -21,7 +25,7 @@ class PokemonRepository: PokemonRepositoryProtocol {
     }
     
     func getMorePokemons(stringUrl: String) async throws -> PokemonResponse {
-        print("Start MORE POKEMONS request")
+        dPrint("Start MORE POKEMONS request")
         
         let response = try await APIRequestDispatcher.requestFromString(stringUrl: stringUrl, responseClass: PokemonResponse.self)
         
@@ -29,7 +33,7 @@ class PokemonRepository: PokemonRepositoryProtocol {
     }
     
     func getPokemonDetail(stringUrl: String) async throws -> PokemonDetail {
-        print("Start POKEMON DETAIL request")
+        dPrint("Start POKEMON DETAIL request")
         
         let response = try await APIRequestDispatcher.requestFromString(stringUrl: stringUrl, responseClass: PokemonDetail.self)
         

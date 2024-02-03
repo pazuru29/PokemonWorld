@@ -17,7 +17,7 @@ class PokedexViewModel: ObservableObject {
     
     @Published var hasMoreRows: Bool = false
     
-    @Published var state: StateEnum = .loading
+    @Published var state: LoaderState = .loading
     
     private var nextStringUrl: String?
     
@@ -41,7 +41,7 @@ class PokedexViewModel: ObservableObject {
                     state = .loaded
                 }
             } catch {
-                print("Fetching establishments failed with error \(error)")
+                dPrint("Fetching establishments failed with error \(error)")
                 state = .erorr
             }
         }
@@ -67,7 +67,7 @@ class PokedexViewModel: ObservableObject {
                     hasMoreRows = nextStringUrl != nil
                 }
             } catch {
-                print("Fetching establishments failed with error \(error)")
+                dPrint("Fetching establishments failed with error \(error)")
             }
         }
     }
@@ -84,6 +84,7 @@ class PokedexViewModel: ObservableObject {
             }
             
             if let savedPokemon = savedPokemon {
+                //TODO: change to cache
                 mapOfImages[url] = UIImage(data: savedPokemon.image ?? Data())
             }
         }

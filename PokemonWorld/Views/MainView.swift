@@ -47,7 +47,7 @@ struct MainView: View, KeyboardReadable {
             }
         }
         .onReceive(keyboardPublisher, perform: { newIsKeyboardVisible in
-            print("Is keyboard visible? ", newIsKeyboardVisible)
+            dPrint("Is keyboard visible? ", newIsKeyboardVisible)
             isKeyboardVisible = newIsKeyboardVisible
         })
     }

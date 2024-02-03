@@ -1,5 +1,5 @@
 //
-//  Extension+View.swift
+//  View+Extension.swift
 //  PokemonWorld
 //
 //  Created by Yaroslav Chlek on 24.01.2024.

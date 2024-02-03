@@ -21,7 +21,7 @@ class CoreDataManager: ObservableObject {
     private init() {
         container.loadPersistentStores { description, error in
             if let error = error {
-                print("Failed to load the data \(error.localizedDescription)")
+                dPrint("Failed to load the data \(error.localizedDescription)")
             }
         }
     }
@@ -29,10 +29,10 @@ class CoreDataManager: ObservableObject {
     func save() {
         do {
             try viewContext.save()
-            print("Data saved")
+            dPrint("Data saved")
         } catch {
             viewContext.rollback()
-            print("Failed to save the data \(error.localizedDescription)")
+            dPrint("Failed to save the data \(error.localizedDescription)")
         }
     }
     
@@ -45,7 +45,7 @@ class CoreDataManager: ObservableObject {
         do {
             return try viewContext.existingObject(with: id) as? PokemonSaved
         } catch {
-            print("Failed to get object by id")
+            dPrint("Failed to get object by id")
             return nil
         }
     }
@@ -56,7 +56,7 @@ class CoreDataManager: ObservableObject {
         do {
             return try viewContext.fetch(request)
         } catch {
-            print("Failed to load the data")
+            dPrint("Failed to load the data")
             return []
         }
     }

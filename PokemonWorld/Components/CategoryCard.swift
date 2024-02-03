@@ -7,7 +7,11 @@
 
 import SwiftUI
 
-struct CategoryCard<T>: View {
+struct CategoryCard<T>: View, Equatable {
+    static func == (lhs: CategoryCard<T>, rhs: CategoryCard<T>) -> Bool {
+        lhs.title == rhs.title && lhs.isSelected == rhs.isSelected
+    }
+    
     var value: T
     var title: String
     var isSelected: Bool

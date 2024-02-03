@@ -44,25 +44,21 @@ struct OnboardingName: View, KeyboardReadable {
                 .clipShape(RoundedRectangle(cornerRadius: 12))
                 .padding(.top, 36)
             
-            //TODO: Need to fix
-            Spacer()
             Spacer()
 
-            
             if !isKeyboardVisible {
                 Button("Save") {
                     isFirstTime = false
                     isMail = gender == .mail
                     name = currentUsername
                 }
+                .padding(.bottom, 24)
                 .buttonStyle(MainButtonStyle())
                 .disabled(currentUsername.isEmpty)
             }
-            
-            Spacer()
         }
         .onReceive(keyboardPublisher, perform: { newIsKeyboardVisible in
-            print("Is keyboard visible? ", newIsKeyboardVisible)
+            dPrint("Is keyboard visible? ", newIsKeyboardVisible)
             isKeyboardVisible = newIsKeyboardVisible
         })
         .padding(.horizontal, 20)
