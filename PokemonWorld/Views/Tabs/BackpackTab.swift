@@ -6,15 +6,20 @@
 //
 
 import SwiftUI
+import Combine
 
 struct BackpackTab: View {
     @EnvironmentObject var backpackViewModel: BackpackViewModel
+    //MARK: Search
+    @State var searchText: String = ""
     
-    @State var isLoading = true
+    let searchPublisher = PassthroughSubject<String, Never>()
+    
+    @State var filteredPokemonList: [(String, PokemonDetail)] = []
     
     var body: some View {
         Group{
-            if isLoading {
+            if backpackViewModel.state == .loading {
                 loadingView()
             } else {
                 listOfPokemons()
@@ -22,7 +27,7 @@ struct BackpackTab: View {
         }
         .navigationTitle("Backpack")
         .onAppear {
-            isLoading = !backpackViewModel.getInitData()
+            backpackViewModel.getInitData()
         }
     }
     
@@ -46,7 +51,7 @@ struct BackpackTab: View {
         } else {
             ScrollView {
                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
-                    ForEach(backpackViewModel.listOfPokemons, id: \.0) { (url, pokemon) in
+                    ForEach(filteredPokemonList, id: \.0) { (url, pokemon) in
                         NavigationLink(destination: {
                             PokemonDetailView(pokemon: Pokemon(name: pokemon.name, url: url))
                         }, label: {
@@ -77,6 +82,21 @@ struct BackpackTab: View {
                 .padding(.horizontal, 20)
                 .padding(.bottom, 16)
             }
+            .onAppear {
+                if searchText.isEmpty {
+                    filteredPokemonList = backpackViewModel.listOfPokemons
+                }
+            }
+            .onChange(of: searchText, { oldValue, newValue in
+                if newValue.isEmpty {
+                    filteredPokemonList = backpackViewModel.listOfPokemons
+                } else {
+                    filteredPokemonList = backpackViewModel.listOfPokemons.filter { (id, pokemon) in
+                        return pokemon.name?.lowercased().contains(searchText.lowercased()) ?? false
+                    }
+                }
+            })
+            .searchable(text: $searchText)
         }
     }
 }

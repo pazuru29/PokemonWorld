@@ -41,6 +41,7 @@
 		A8C1CFCD2B614507001EF17E /* OnboardingName.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1CFCC2B614507001EF17E /* OnboardingName.swift */; };
 		A8C1CFCF2B615289001EF17E /* PokedexViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1CFCE2B615289001EF17E /* PokedexViewModel.swift */; };
 		A8C1CFD12B61666D001EF17E /* PokemonDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C1CFD02B61666D001EF17E /* PokemonDetail.swift */; };
+		A8DAABDA2B6E3D1500756B4B /* StateEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DAABD92B6E3D1500756B4B /* StateEnum.swift */; };
 		A8FBB3D72B63B08600DAC487 /* Pokemondetail+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FBB3D62B63B08600DAC487 /* Pokemondetail+Extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +81,7 @@
 		A8C1CFCC2B614507001EF17E /* OnboardingName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingName.swift; sourceTree = "<group>"; };
 		A8C1CFCE2B615289001EF17E /* PokedexViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexViewModel.swift; sourceTree = "<group>"; };
 		A8C1CFD02B61666D001EF17E /* PokemonDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetail.swift; sourceTree = "<group>"; };
+		A8DAABD92B6E3D1500756B4B /* StateEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateEnum.swift; sourceTree = "<group>"; };
 		A8FBB3D62B63B08600DAC487 /* Pokemondetail+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pokemondetail+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -192,6 +194,7 @@
 			children = (
 				A8C1CFB22B611DE0001EF17E /* ButtonStyles */,
 				A8C1CFA82B61149A001EF17E /* AppConfiguration.swift */,
+				A8DAABD92B6E3D1500756B4B /* StateEnum.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8DAABDA2B6E3D1500756B4B /* StateEnum.swift in Sources */,
 				A8C1CFC92B613DBC001EF17E /* KeyboardReadable+Extension.swift in Sources */,
 				A8C1CFA92B61149A001EF17E /* AppConfiguration.swift in Sources */,
 				A857AD202B6883EC0098B0D5 /* EditProfileView.swift in Sources */,

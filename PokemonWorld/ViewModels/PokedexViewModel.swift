@@ -17,10 +17,13 @@ class PokedexViewModel: ObservableObject {
     
     @Published var hasMoreRows: Bool = false
     
+    @Published var state: StateEnum = .loading
+    
     private var nextStringUrl: String?
     
     //MARK: Get first 20 pokemons
-    func getInitData() -> Bool {
+    func getInitData() {
+        state = .loading
         Task {
             do {
                 //Get response all pokemon
@@ -34,13 +37,14 @@ class PokedexViewModel: ObservableObject {
                     
                     listOfpokemons = pokemonResponse.results
                     hasMoreRows = nextStringUrl != nil
+                    
+                    state = .loaded
                 }
             } catch {
                 print("Fetching establishments failed with error \(error)")
+                state = .erorr
             }
         }
-        
-        return true
     }
     
     //MARK: Get more pokemons

@@ -10,11 +10,9 @@ import SwiftUI
 struct PokedexTab: View {
     @EnvironmentObject var pokedexViewModel: PokedexViewModel
     
-    @State var isLoading: Bool = true
-    
     var body: some View {
         Group {
-            if isLoading {
+            if pokedexViewModel.state == .loading {
                 loadingView()
             } else {
                 listOfPokemons()
@@ -23,7 +21,7 @@ struct PokedexTab: View {
         .navigationTitle("Pokedex")
         .onAppear {
             if pokedexViewModel.listOfpokemons.isEmpty {
-                isLoading = !pokedexViewModel.getInitData()
+                pokedexViewModel.getInitData()
             } else {
                 pokedexViewModel.getImagesFromDB(listOfPokemons: pokedexViewModel.listOfpokemons)
             }

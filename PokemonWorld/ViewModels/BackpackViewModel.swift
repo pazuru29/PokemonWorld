@@ -12,7 +12,11 @@ class BackpackViewModel: ObservableObject {
     
     @Published var mapOfImages: [Int:UIImage] = [:]
     
-    func getInitData() -> Bool {
+    @Published var state: StateEnum = .loading
+    
+    func getInitData() {
+        state = .loading
+        
         listOfPokemons.removeAll()
         
         let listOfSavedPokemons = CoreDataManager.shared.getSavedPokemons()
@@ -24,6 +28,6 @@ class BackpackViewModel: ObservableObject {
             }
         }
         
-        return true
+        state = .loaded
     }
 }
